@@ -31,7 +31,22 @@ jmp errorLevelLoad
 ; Draw level (initially we redraw everything)
 call redraw
 
-; TODO: write rest of game here (waiting for input, moving player, redrawing etc)
+; Main game loop
+label mainloopstart
+; Check for input
+call cursesGetChar
+mov r1 256
+cmp r1 r0 r1
+skipneq r1
+jmp mainloopinputend
+mov r1 'q'
+cmp r1 r0 r1
+skipneq r1
+jmp done
+; Unknown character
+label mainloopinputend
+; Loop for next tick
+jmp mainloopstart
 
 ; Exit
 label done
