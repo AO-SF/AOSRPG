@@ -5,8 +5,9 @@ requireend level.s
 requireend tiles.s
 
 label redraw
-; clear screen and return to top left
+; clear screen, turn off cursor and return to top left
 call cursesReset
+call cursesCursorHide
 ; row loop init
 mov r1 0 ; current row
 label redrawRowLoopStart

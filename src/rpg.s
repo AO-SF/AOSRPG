@@ -38,4 +38,5 @@ call exit
 ; Tidy up
 label tidyup
 call cursesReset
+call cursesCursorShow
 ret
