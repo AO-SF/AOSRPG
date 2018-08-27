@@ -23,14 +23,19 @@ call redraw
 
 ; Exit
 label done
-call cursesReset
+call tidyup
 mov r0 0
 call exit
 
 ; Errors
 label errorLevelLoad
-call cursesReset
+call tidyup
 mov r0 errorStrLevelLoad
 call puts0
 mov r0 1
 call exit
+
+; Tidy up
+label tidyup
+call cursesReset
+ret
