@@ -58,5 +58,4 @@ push8 r1
 call cursesSetPosXY
 pop8 r1
 pop8 r0
-call drawCellRaw
-ret
+jmp drawCellRaw ; HACK
