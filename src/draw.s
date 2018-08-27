@@ -5,7 +5,9 @@ requireend level.s
 requireend tiles.s
 
 label redraw
-; clear screen, turn off cursor and return to top left
+; clear screen, turn off echo & cursor and return to top left
+mov r0 0
+call cursesSetEcho
 call cursesReset
 call cursesCursorHide
 ; row loop init

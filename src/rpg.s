@@ -39,4 +39,6 @@ call exit
 label tidyup
 call cursesReset
 call cursesCursorShow
+mov r0 1
+call cursesSetEcho
 ret
