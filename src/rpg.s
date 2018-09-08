@@ -1,3 +1,5 @@
+require sys/sys.s
+
 requireend std/io/fput.s
 requireend std/proc/exit.s
 
@@ -16,8 +18,8 @@ jmp suicideHandler
 label start
 
 ; Register suicide signal handler
-mov r0 1024
-mov r1 3 ; suicide signal id
+mov r0 SyscallIdRegisterSignalHandler
+mov r1 SignalIdSuicide
 mov r2 suicideHandlerTrampoline
 syscall
 
